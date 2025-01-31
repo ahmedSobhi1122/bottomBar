@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );
   }
@@ -44,18 +45,20 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
+        unselectedItemColor: Colors.white,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'الرئيسية',
+            icon: Icon(Icons.login),
+            label: 'Login',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'البحث',
+            icon: Icon(Icons.sports_gymnastics_outlined),
+            label: 'BMI',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'الإعدادات',
+            icon: Icon(Icons.calculate_outlined),
+            label: 'calculator',
           ),
         ],
         currentIndex: _selectedIndex,

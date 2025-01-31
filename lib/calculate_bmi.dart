@@ -24,30 +24,32 @@ class _CalculateBmiScreenState extends State<CalculateBmiScreen> {
         ),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: height / 30,
-          ),
-          const Selected(),
-          SizedBox(
-            height: height / 40,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                children: [
-                  const Weight(),
-                  SizedBox(height: height / 40),
-                  const Age(),
-                ],
-              ),
-              const CustomSlider(),
-            ],
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: height / 30,
+            ),
+            const Selected(),
+            SizedBox(
+              height: height / 40,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  children: [
+                    const Weight(),
+                    SizedBox(height: height / 40),
+                    const Age(),
+                  ],
+                ),
+                const CustomSlider(),
+              ],
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: ElevatedButton(
         onPressed: () {
@@ -104,12 +106,12 @@ class _WeightState extends State<Weight> {
         color: Color(0xff1d1e33),
         boxShadow: [
           BoxShadow(
-            color: Colors.white.withOpacity(0.3), // White shadow
-            blurRadius: 10, // Spread of the shadow
-            offset: Offset(0, 4), // Shadow position (horizontal, vertical)
+            color: Colors.white.withOpacity(0.3),
+            blurRadius: 10,
+            offset: Offset(0, 4),
           ),
         ],
-        borderRadius: BorderRadius.circular(10), // Optional for rounded corners
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -188,12 +190,12 @@ class _AgeState extends State<Age> {
         color: Color(0xff1d1e33),
         boxShadow: [
           BoxShadow(
-            color: Colors.white.withOpacity(0.3), // White shadow
-            blurRadius: 10, // Spread of the shadow
-            offset: Offset(0, 4), // Shadow position (horizontal, vertical)
+            color: Colors.white.withOpacity(0.3),
+            blurRadius: 10,
+            offset: Offset(0, 4),
           ),
         ],
-        borderRadius: BorderRadius.circular(10), // Optional for rounded corners
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -272,12 +274,12 @@ class _CustomSliderState extends State<CustomSlider> {
         color: Color(0xff1d1e33),
         boxShadow: [
           BoxShadow(
-            color: Colors.white.withOpacity(0.3), // White shadow
-            blurRadius: 10, // Spread of the shadow
-            offset: Offset(0, 4), // Shadow position (horizontal, vertical)
+            color: Colors.white.withOpacity(0.3),
+            blurRadius: 10,
+            offset: Offset(0, 4),
           ),
         ],
-        borderRadius: BorderRadius.circular(10), // Optional for rounded corners
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
         children: [
@@ -363,14 +365,12 @@ class _SelectedState extends State<Selected> {
               color: selected ? Color(0xff1d1e33) : Color(0xff111328),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.white.withOpacity(0.3), // White shadow
-                  blurRadius: 10, // Spread of the shadow
-                  offset:
-                  Offset(0, 4), // Shadow position (horizontal, vertical)
+                  color: Colors.white.withOpacity(0.3),
+                  blurRadius: 10,
+                  offset: Offset(0, 4),
                 ),
               ],
-              borderRadius:
-              BorderRadius.circular(10), // Optional for rounded corners
+              borderRadius: BorderRadius.circular(10),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -402,7 +402,7 @@ class _SelectedState extends State<Selected> {
               color: selected ? Color(0xff111328) : Color(0xff1d1e33),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.white.withOpacity(0.3), // White shadow
+                  color: Colors.white.withOpacity(0.3),
                   blurRadius: 10,
                   offset: Offset(0, 4),
                 ),

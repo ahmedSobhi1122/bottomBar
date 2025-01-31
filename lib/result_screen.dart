@@ -37,60 +37,62 @@ class _ResultScreenState extends State<ResultScreen> {
           color: Colors.white,
         ),
       ),
-      body: Container(
-        width: width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Text(
-              "Your Result",
-              style: TextStyle(color: Colors.white, fontSize: 46),
-            ),
-            SizedBox(
-              height: height / 20,
-            ),
-            Container(
-              height: height / 1.8,
-              width: width / 1.2,
-              decoration: BoxDecoration(
-                color: const Color(0xff1d1e33),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.white.withOpacity(0.3),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-                borderRadius:
-                BorderRadius.circular(10), // Optional for rounded corners
+      body: SingleChildScrollView(
+        child: Container(
+          width: width,
+          padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text(
+                "Your Result",
+                style: TextStyle(color: Colors.white, fontSize: 46),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    getCategoryText(result),
-                    style: TextStyle(
-                        color: getCategoryColor(result),
-                        fontSize: 36,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    result.toStringAsFixed(2),
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 70,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    getFeedbackMessage(result),
-                    style: const TextStyle(color: Colors.white, fontSize: 20),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+              SizedBox(
+                height: height / 20,
               ),
-            ),
-          ],
+              Container(
+                height: height / 1.8,
+                width: width / 1.2,
+                decoration: BoxDecoration(
+                  color: const Color(0xff1d1e33),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.white.withOpacity(0.3),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      getCategoryText(result),
+                      style: TextStyle(
+                          color: getCategoryColor(result),
+                          fontSize: 36,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      result.toStringAsFixed(2),
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 70,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      getFeedbackMessage(result),
+                      style: const TextStyle(color: Colors.white, fontSize: 20),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: ElevatedButton(
